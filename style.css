@@ -1,0 +1,67 @@
+/* Styles the border and ensures */
+html {
+  height: 100%;
+  border-style: solid;
+  border-color: gold; 
+  border-width: 10px;
+}
+body {
+  height: 100%;
+}
+
+/* Styles for the header section with title */
+#maintitle {
+  height: 75px;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-family: tahoma;
+  border-radius: 25px;
+  border: solid;
+  border-color: gold;
+  margin-bottom: 100px;
+  background-color: blueviolet;
+}
+
+/* Styles for the main title text */
+#maintitletext {
+  border: solid;
+  background-color: white;
+  border-radius: 25px;
+  border-color: gold; 
+  padding: 10px;
+}
+
+/* Styles for images and links */
+.organizeimage, img {
+  width: 350px;
+  height: 250px;
+  border-radius: 25px;
+}
+
+/* Container for centered images with horizontal gaps */
+.centerimg {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  column-gap: 100px;
+}
+
+/* Container for centered elements */
+.center {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+/* Styles for zoom effect on images */
+.zoom {
+  transition: transform 0.5s ease;
+  object-fit: cover;
+}
+
+/* Zoom effect on hover */
+.zoom:hover {
+  transform: scale(1.2);
+}
