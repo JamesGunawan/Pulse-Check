@@ -1,15 +1,46 @@
-/* Styles the border and ensures */
+/* Ensures the entire HTML document takes full height and width */
 html {
   height: 100%;
-  border-style: solid;
-  border-color: gold; 
-  border-width: 10px;
-}
-body {
-  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-/* Styles for the header section with title */
+/* Sets the body to flexbox layout for vertical stacking of content */
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensures box-sizing applies to all elements for consistent sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Footer styling with background color and centered text */
+footer {
+  padding: 20px;
+  position: relative;
+  background-color: cyan;
+  width: 100%;
+  text-align: center;
+}
+
+/* Main container that holds the content with border styling */
+.page-container {
+  flex: 1; /* Allows this to grow and fill the available space */
+  border-style: solid;
+  border-color: gold;
+  border-width: 10px;
+  width: 100%;
+  margin: 0; /* Remove any additional margin */
+}
+
+/* Header section styling for the main title */
 #maintitle {
   height: 75px;
   width: 50%;
@@ -24,7 +55,7 @@ body {
   background-color: blueviolet;
 }
 
-/* Styles for the main title text */
+/* Main title text styling */
 #maintitletext {
   border: solid;
   background-color: white;
@@ -33,7 +64,7 @@ body {
   padding: 10px;
 }
 
-/* Styles for images and links */
+/* Image and link styling */
 .organizeimage, img {
   width: 350px;
   height: 250px;
@@ -42,26 +73,278 @@ body {
 
 /* Container for centered images with horizontal gaps */
 .centerimg {
-  align-items: center;
-  justify-content: center;
   display: flex;
+  flex-wrap: wrap; /* Allows items to wrap when exceeding container width */
   column-gap: 100px;
+  row-gap: 50px; 
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15%;
 }
 
-/* Container for centered elements */
+/* Centering utility class for elements */
 .center {
   align-items: center;
   justify-content: center;
   display: flex;
 }
 
-/* Styles for zoom effect on images */
+/* Zoom effect on images for hover state */
 .zoom {
   transition: transform 0.5s ease;
   object-fit: cover;
 }
 
-/* Zoom effect on hover */
+/* Scaling effect on hover */
 .zoom:hover {
+  transform: scale(1.05);
+}
+
+/* Styling for individual post containers */
+.post-container {
+  background-color: white;
+  background-image: url("https://img.freepik.com/free-photo/cement-texture_1194-5360.jpg"); /* Texture image */
+  background-repeat: repeat;
+  background-size: auto;
+  border: solid black 3px;
+  padding: 6px;
+  border-radius: 25px;
+}
+
+/* Styling for like button images */
+.like-button {
+  width: 25px;  
+  height: 25px;
+}
+
+/* Hover effect for like button */
+.like-button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+/* Styling for dislike button images */
+.dislike-button {
+  width: 40px;  
+  height: 40px;
+  display: flex;
+  transition: transform 0.2s ease;
+  margin-top: -5px;
+}
+
+/* Hover effect for dislike button */
+.dislike-button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+/* Animation effect for the dislike button */
+.dislike-button.animation {
   transform: scale(1.2);
+}
+
+/* Styling for visibility icon */
+.visibility {
+  display: flex;
+  width: 40px;  
+  height: 40px;
+  margin-top: -7px;
+  margin-left: -5px;
+}
+
+/* Hover effect for visibility icon */
+.visibility:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+/* Blur effect class for elements */
+.blur {
+  filter: blur(10px);
+  transition: filter 0.3s;
+}
+
+/* Styling for download button images */
+.download-button {
+  width: 30px;  
+  height: 30px;
+  margin-left: 180px;
+  visibility: hidden; /* HIDDEN FOR NOW, continue working on this when javascript finally works downloading the image */
+}
+
+/* Hover effect for download button */
+.download-button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+/* Flexbox styling for post icons container */
+.post-icons {
+  display: flex;
+  margin-top: 5px;
+}
+
+/* Flip card container for interactive icons */
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+
+/* Inner container for the flip card to manage front and back sides */
+.flip-card-inner {
+  position: relative;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Rotation effect when the card is flipped */
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Positioning for front and back sides of the flip card */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Front side styling of the flip card (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Back side styling of the flip card */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Styling for share button images */
+.share-button{
+  width: 25px;
+  height: 25px;
+  margin-top: 2px;
+}
+
+/* Hover effect for share button */
+.share-button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+/* Feedback container for user comments and feedback */
+.feedback-container {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  height: auto; /* Allow the container to expand based on content */
+}
+
+/* Styling for feedback message display */
+.share-message {
+  margin-top: -10px;
+  margin-left: 280px;
+  display: none; /* Hidden by default */
+}
+
+/* Styling for feedback section */
+.feedback {
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Individual comment styling */
+.comment {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+/* Feedback message title styling */
+.feedback-message {
+  margin-bottom: 10px;
+}
+
+/* Styling for the feedback type dropdown button */
+.feedback-drop {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  align-self: center;
+}
+
+/* Hover effect for feedback dropdown button */
+.feedback-drop:hover {
+  background-color: #207d23;
+  color: rgb(231, 224, 224);
+} 
+
+/* Container for the dropdown content */
+.feedback-comment-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown content hidden by default */
+.feedback-type {
+  display: none; /* Initially hidden */
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1; /* Ensures dropdown appears above other content */
+}
+
+/* Links inside the dropdown styling */
+.feedback-type a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; /* Stack links vertically */
+}
+
+/* Hover effect for dropdown links */
+.feedback-type a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Styling for the comment input area */
+.comment-input {
+  width: 100%;
+  resize: none; /* Disable resizing */
+}
+
+/* Styling for the feedback submit button */
+.feedback-submit {
+  background-color: lightgray;
+  border-radius: 5px;
+  border: solid black 1px;
+}
+
+/* Hover effect for feedback submit button */
+.feedback-submit:hover {
+  background-color: rgb(172, 170, 170);
+  cursor: pointer;
+}
+
+/* Margin styling for comments container */
+#commentsContainer {
+  margin-top: 20px; 
+}
+
+/* Margin styling for comment title */
+.comment-title {
+  margin-bottom: -20px;
 }

@@ -1,58 +1,168 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Photoflip website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photoflip Website</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-  <!-- Centers the title -->
-  <div class="center"> 
-    <header id="maintitle">
-      <h1 id="maintitletext">Beach Pictures</h1> <!-- Adds border and style to the text -->
-    </header>
-  </div>
-  
-  <h6 class="center">Click on the image to get to the source page</h6>
-
-  <main>
-    <!-- Container for images, centered and arranged with gaps -->
-    <div class="centerimg"> 
-
-      
-      <div>
-        <div class="zoom"> <!-- First image with zoom effect on hover -->
-          <a href="https://openverse.org/image/5cd0db32-a1a3-4dd3-9ac8-a358c997fc21?q=sea" class="organizeimage">
-            <img src="https://live.staticflickr.com/3507/3179444802_1aa162aa46_b.jpg" alt="Beach Image 1">
-          </a>
-        </div>
-        <h6 class="center">Picture by Nattu is licensed under CC BY 2.0</h6>
-      </div>
-        
-      
-      <div>
-        <div class="zoom"><!-- Second image with zoom effect on hover -->
-          <a href="https://openverse.org/image/280b52b4-769e-4563-93cb-92bbc4dfa6ae?q=sea" class="organizeimage">
-            <img src="https://live.staticflickr.com/2855/10785409434_1ce192cf73_b.jpg" alt="Beach Image 2">
-          </a>
-        </div>
-        <h6 class="center">This image by Jocey K is licensed under CC BY 2.0</h6> 
-      </div>
-
-
-      <div>
-        <div class="zoom"><!--Third image with zoom effect on hover -->
-          <a href="" class="organizeimage">
-            <img src="https://live.staticflickr.com/7578/15724464767_5ca7aa3327_b.jpg" alt="Beach Image 3">
-          </a>
-        </div>
-        <h6 class="center">This image by Kiwi Tom is licensed under CC BY 2.0</h6> 
-      </div>
-
+  <!-- Container for the entire page -->
+  <div class="page-container">
+    
+    <!-- Centered header with the main title -->
+    <div class="center"> 
+      <header id="maintitle">
+        <h1 id="maintitletext">Beach Pictures</h1>
+      </header>
     </div>
-  </main>
+  
+    <h6 class="center">Click on the image to get to the source page</h6>
 
-  <footer>  
+    <!-- Main content area -->
+    <main class="main-content">
 
-  </footer>
+      <!-- Container for all posts with images and icons -->
+      <div class="centerimg"> 
+
+        <!-- Post Container 1 -->
+        <div class="post-container">
+          <!-- Image with zoom effect on hover -->
+          <div class="zoom">
+            <a href="https://openverse.org/image/5cd0db32-a1a3-4dd3-9ac8-a358c997fc21?q=sea" class="organizeimage">
+              <img src="https://live.staticflickr.com/3507/3179444802_1aa162aa46_b.jpg" alt="Beach Image 1" class="download-image">
+            </a>
+          </div>
+          
+          <!-- Post action icons (like, dislike, share, download) -->
+          <div class="post-icons">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="like.png" alt="Like button" class="like-button">
+                </div>
+                <div class="flip-card-back">
+                  <img src="like-active.png" alt="Liked button" class="like-button">
+                </div>
+              </div>
+            </div>
+
+            <img src="dislike.png" alt="Dislike button" class="dislike-button" id="dislike-button">
+            <img src="show.png" alt="Visibility icon" class="visibility" id="visibility">
+            <img src="download.png" alt="Download icon" class="download-button" id="download-button">
+            <img src="share.png" alt="Share icon" class="share-button" id="share-button">
+          </div>
+
+          <!-- Hidden message for link copy confirmation -->
+          <h6 class="share-message">Link Copied!</h6>
+
+          <!-- Attribution for the image -->
+          <h6 class="center">Picture by Nattu is licensed under CC BY 2.0</h6>
+        </div>
+        
+        <!-- Post Container 2 -->
+        <div class="post-container">
+          <div class="zoom">
+            <a href="https://openverse.org/image/280b52b4-769e-4563-93cb-92bbc4dfa6ae?q=sea" class="organizeimage">
+              <img src="https://live.staticflickr.com/2855/10785409434_1ce192cf73_b.jpg" alt="Beach Image 2">
+            </a>
+          </div>
+          
+          <!-- Post action icons (like, dislike, share, download) -->
+          <div class="post-icons">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="like.png" alt="Like button" class="like-button">
+                </div>
+                <div class="flip-card-back">
+                  <img src="like-active.png" alt="Liked button" class="like-button">
+                </div>
+              </div>
+            </div>
+
+            <img src="dislike.png" alt="Dislike button" class="dislike-button" id="dislike-button">
+            <img src="show.png" alt="Visibility icon" class="visibility" id="visibility">
+            <img src="download.png" alt="Download icon" class="download-button" id="download-button">
+            <img src="share.png" alt="Share icon" class="share-button" id="share-button">
+          </div>
+
+          <!-- Hidden message for link copy confirmation -->
+          <h6 class="share-message">Link Copied!</h6>
+
+          <!-- Attribution for the image -->
+          <h6 class="center">This image by Jocey K is licensed under CC BY 2.0</h6> 
+        </div>
+
+        <!-- Post Container 3 -->
+        <div class="post-container">
+          <div class="zoom">
+            <a href="https://openverse.org/image/e26417b0-7463-493b-8fc0-5c6b114dc5fc?q=sea" class="organizeimage">
+              <img src="https://live.staticflickr.com/7578/15724464767_5ca7aa3327_b.jpg" alt="Beach Image 3">
+            </a>
+          </div>
+
+          <!-- Post action icons (like, dislike, share, download) -->
+          <div class="post-icons">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="like.png" alt="Like button" class="like-button">
+                </div>
+                <div class="flip-card-back">
+                  <img src="like-active.png" alt="Liked button" class="like-button">
+                </div>
+              </div>
+            </div>
+
+            <img src="dislike.png" alt="Dislike button" class="dislike-button" id="dislike-button">
+            <img src="show.png" alt="Visibility icon" class="visibility" id="visibility">
+            <img src="download.png" alt="Download icon" class="download-button" id="download-button">
+            <img src="share.png" alt="Share icon" class="share-button" id="share-button">
+          </div>
+
+          <!-- Hidden message for link copy confirmation -->
+          <h6 class="share-message">Link Copied!</h6>
+
+          <!-- Attribution for the image -->
+          <h6 class="center">This image by Kiwi Tom is licensed under CC BY 2.0</h6> 
+        </div>
+        
+      </div>
+
+      <!-- Feedback Section -->
+      <div class="feedback-container">
+        <div class="feedback">   
+          <h3 class="feedback-message">Leave a Feedback</h3>
+
+          <!-- Feedback dropdown and form -->
+          <div class="feedback-comment-container">
+            <button class="feedback-drop">Feedback Type</button>
+            <div id="feedback-type" class="feedback-type">
+              <a href="#">General Comment</a>
+              <a href="#">General Feedback</a>
+              <a href="#">App Enhancement</a>
+            </div>
+          </div>
+          
+          <!-- Comment Form -->
+          <form id="commentForm">
+            <textarea id="commentInput" class="comment-input" rows="4" cols="50" required></textarea>
+            <button type="submit" class="feedback-submit">Post</button>
+          </form>
+
+          <!-- Section for posted feedback comments -->
+          <h5 class="comment-title">Feedbacks:</h5>
+          <div id="commentsContainer"></div>
+      
+        </div>    
+      </div>  
+    </main>
+
+    <!-- Footer Section -->
+    <footer>  
+    </footer>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
