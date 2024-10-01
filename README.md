@@ -1,2 +1,2 @@
-# Pulse-Check-1
+# Pulse-Check-2
 This website is used to display ocean images and enhance them with animations
